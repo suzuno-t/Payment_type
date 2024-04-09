@@ -7,6 +7,7 @@ function calculate() {
     10000: 0,
     5000: 0,
     1000: 0,
+    500: 0,
     100: 0,
     50: 0,
     10: 0,
@@ -22,8 +23,8 @@ function calculate() {
     }
   }
 
-  // 100円玉、50円玉、10円玉、5円玉、1円玉を処理
-  for (const denomination of [100, 50, 10, 5, 1]) {
+  // 500円玉、100円玉、50円玉、10円玉、5円玉、1円玉を処理
+  for (const denomination of [500,100, 50, 10, 5, 1]) {
     while (price >= denomination) {
       coins[denomination]++;
       price -= denomination;
@@ -38,6 +39,7 @@ function calculate() {
       <li>10000円札: ${coins[10000]}枚</li>
       <li>5000円札: ${coins[5000]}枚</li>
       <li>1000円札: ${coins[1000]}枚</li>
+      <li>500円玉: ${coins[500]}枚</li>
       <li>100円玉: ${coins[100]}枚</li>
       <li>50円玉: ${coins[50]}枚</li>
       <li>10円玉: ${coins[10]}枚</li>
