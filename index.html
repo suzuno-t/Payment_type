@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment in Japan</title>
+  <meta name="description" content="【ツール】日本円で買い物をするときに使用する、紙幣・貨幣の枚数を確認するツールです。">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Payment type of MONEY</h1>
+    <h2>支払い金額を入力して「Get Results」ボタンを押すと<br>どの日本貨幣を、何枚使用すれば良いかがわかります。</h2>
+  </header>
+  <main>
+    <div id="input">
+      <label for="price">Payment</label>
+      <input type="number" id="price" placeholder="price">
+      <button type="button" id="g-button" onclick="calculate()">Get Results</button>
+      <button type="button" id="c-button" onclick="clearInput()">Clear</button>
+    </div>
+    <div id="result"></div>
+    
+    <script src="main.js"></script>  
+  </main>
+  <footer>
+    
+  </footer>
+</body>
+</html>
