@@ -15,6 +15,25 @@ function calculate() {
     1: 0,
   };
 
+  // 各硬貨・紙幣の画像ファイルパス
+  const coinImages = {
+    10000: "./10000yen.png",
+    5000: "./5000yen.png",
+    1000: "./1000yen.png",
+    500: "./500yen.png",
+    100: "./100yen.png",
+    50: "./50yen.png",
+    10: "./10yen.png",
+    5: "./5yen.png",
+    1: "./1yen.png",
+  };
+
+  const images = document.querySelectorAll('img');
+  for (const image of images) {
+    image.width = 50;
+    image.height = 50;
+  }
+
   // 10000円札、5000円札、1000円札を処理
   for (const denomination of [10000, 5000, 1000]) {
     while (price >= denomination) {
@@ -33,20 +52,18 @@ function calculate() {
 
   // 結果を表示
   const resultElement = document.getElementById('result');
-  resultElement.innerHTML = `
-    <h2>各硬貨・紙幣の枚数</h2>
-    <ul>
-      <li>10000円札: ${coins[10000]}枚</li>
-      <li>5000円札: ${coins[5000]}枚</li>
-      <li>1000円札: ${coins[1000]}枚</li>
-      <li>500円玉: ${coins[500]}枚</li>
-      <li>100円玉: ${coins[100]}枚</li>
-      <li>50円玉: ${coins[50]}枚</li>
-      <li>10円玉: ${coins[10]}枚</li>
-      <li>5円玉: ${coins[5]}枚</li>
-      <li>1円玉: ${coins[1]}枚</li>
-    </ul>
-  `;
+  resultElement.innerHTML = "";
+
+  for (const denomination of Object.keys(coins)) {
+    const coinImage = coinImages[denomination];
+    const count = coins[denomination];
+
+    for (let i = 0; i < count; i++) {
+      const liElement = document.createElement('li');
+      liElement.innerHTML = `<img src="${coinImage}" alt="${denomination}円">`;
+      resultElement.appendChild(liElement);
+    }
+  }
 }
 function clearInput() {
   document.getElementById("price").value = "";

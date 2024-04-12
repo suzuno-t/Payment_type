@@ -5,6 +5,8 @@ body {
   background-color: rgb(188, 217, 243);
 }
 
+
+
 /*================
 PC用のスタイル
 =================*/
@@ -51,8 +53,25 @@ PC用のスタイル
     color: rgb(8, 9, 9);
     background-color: rgb(193, 230, 243);
   }
+  img {
+    width: 50px;
+    height: 50px;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    display: flex;
+    align-items: center;
+  }
+  
+  span {
+    margin-left: 10px;
+  }
 }
-
 /*====================
  スマートフォン用のスタイル
 =====================*/
@@ -95,5 +114,23 @@ PC用のスタイル
     font-size: 15px;
     color: rgb(8, 9, 9);
     background-color: rgb(193, 230, 243); 
+  }
+  img {
+    width: 50px;
+    height: 50px;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    display: flex;
+    align-items: center;
+  }
+  
+  span {
+    margin-left: 10px;
   }
 }
